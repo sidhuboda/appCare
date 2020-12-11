@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="title1">
+        <a routerLink="/addEmployee">ADD EMPLOYEE</a></div><br>
+    <div class="title">EMPLOYEES LIST</div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Sallary</th>
+                <th scope="col">age</th>
+                <!-- <th scope="col">Edit</th> -->
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let details of employeedetails, let i=index">
+                <!-- <td>{{i+1}}</td> -->
+                <td>{{details.id}}</td>
+                <td> <a [routerLink]="['/editEmployee/', details.id]">{{details.employee_name}}</a></td>
+                <td>{{details.employee_salary}}</td>
+                <td>{{details.employee_age}}</td>
+                <td (click)="deleteId(details.id)">Delete </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
